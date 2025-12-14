@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
-import { __ } from '../../i18n/translate'
-import { useProductDetail } from '../../hooks/useProductDetail'
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs'
+import { __ } from '@/i18n/translate'
+import { useProductDetail } from '@/hooks/useProductDetail'
+import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs'
 import {
   getWateringText,
   getFertilizerText,
-} from '../../mappings/productTexts'
+} from '@/mappings/productTexts'
 import styles from './ProductDetail.module.css'
 
 const ProductDetail = () => {
