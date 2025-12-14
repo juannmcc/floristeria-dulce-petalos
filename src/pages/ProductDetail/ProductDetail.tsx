@@ -1,12 +1,15 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { __ } from '../../i18n/translate'
 import { useProductDetail } from '../../hooks/useProductDetail'
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs'
+import {
+  getWateringText,
+  getFertilizerText,
+} from '../../mappings/productTexts'
 import styles from './ProductDetail.module.css'
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>()
-  const navigate = useNavigate()
 
   if (!id) return null
 
@@ -19,25 +22,30 @@ const ProductDetail = () => {
     <div className={styles.container}>
       <Breadcrumbs current={product.name} />
 
-      <div className={styles.content}>
-        <img src={product.imgUrl} alt={product.name} />
+      <div className={styles.card}>
+        <div className={styles.imageWrapper}>
+          <img src={product.imgUrl} alt={product.name} />
+        </div>
 
-        <div>
+        <div className={styles.info}>
           <h2>{product.name}</h2>
-          <p>{product.binomialName}</p>
-          <strong>{product.price} €</strong>
+          <p className={styles.binomial}>{product.binomialName}</p>
 
-          <ul>
-            <li>
-              {__('product.wateringsPerWeek')}: {product.wateringsPerWeek}
-            </li>
-            <li>
-              {__('product.fertilizerType')}: {product.fertilizerType}
-            </li>
+          <strong className={styles.price}>
+            €{product.price.toFixed(2)}
+          </strong>
+
+          <ul className={styles.details}>
+            <li>· {getWateringText(product.wateringsPerWeek)}</li>
+            <li>· {getFertilizerText(product.fertilizerType)}</li>
           </ul>
 
-          <button onClick={() => navigate(-1)}>
-            {__('actions.back')}
+          <button
+            type="button"
+            className={styles.addToCart}
+            onClick={() => {}}
+          >
+            {__('actions.addToCart')}
           </button>
         </div>
       </div>
