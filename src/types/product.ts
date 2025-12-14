@@ -1,9 +1,10 @@
 export interface Product {
-  id: number
+  id: string
   name: string
-  scientific_name: string
+  binomialName: string
   price: number
-  image: string
-  watering_frequency: number
-  fertilizer_type: string
+  imgUrl: string
+  wateringsPerWeek: number
+  fertilizerType: string
+  heightInCm: number
 }
