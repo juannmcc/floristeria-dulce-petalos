@@ -20,19 +20,19 @@ const ProductList = () => {
     )
   })
   
-  return (
-    <div>
-      <h2>{__('products.list.title')}</h2>
-
+return (
+  <div className={styles.page}>
+    <div className={styles.gridContainer}>
       <SearchBar value={search} onChange={setSearch} />
-
       <div className={styles.grid}>
         {filteredProducts.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
-  )
+  </div>
+)
+
 }
 
 export default ProductList
