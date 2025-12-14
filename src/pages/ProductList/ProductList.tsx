@@ -12,11 +12,11 @@ const ProductList = () => {
   if (loading) return <p>{__('loading')}</p>
   if (error) return <p>{__(error)}</p>
 
-  const filteredProducts = products.filter(({ name, scientific_name }) => {
+  const filteredProducts = products.filter(({ name, binomialName }) => {
     const searchLower = search.toLowerCase()
     return (
-      name?.toLowerCase().includes(searchLower) ||
-      scientific_name?.toLowerCase().includes(searchLower)
+      name.toLowerCase().includes(searchLower) ||
+      binomialName.toLowerCase().includes(searchLower)
     )
   })
   
