@@ -8,10 +8,15 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs = ({ current }: BreadcrumbsProps) => {
   return (
-    <nav className={styles.breadcrumbs}>
-      <Link to="/">{__('breadcrumbs.home')}</Link>
-      <span> / </span>
-      <span>{current}</span>
+    <nav className={styles.breadcrumbs} aria-label={__('breadcrumbs.ariaLabel')}>
+      <ol className={styles.list}>
+        <li className={styles.item}>
+          <Link to="/">{__('breadcrumbs.home')}</Link>
+        </li>
+        <li className={styles.item} aria-current="page">
+          <span>{current}</span>
+        </li>
+      </ol>
     </nav>
   )
 }
