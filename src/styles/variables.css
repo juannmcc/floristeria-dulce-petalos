@@ -1,0 +1,18 @@
+:root {
+  --color-primary: #ff4b76;
+  --color-secondary: #f3f4ff;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+  --color-bg: #f8f8f8;
+  --color-card-bg: #ffffff;
+  --color-border: #b5b5b5;
+  --color-muted-hover: #555;
+  --color-add-to-card-background: #7b1040;
+
+  --font-base: system-ui, "Inter", sans-serif;
+
+  --radius-sm: 999px;
+  --radius-md: 18px;
+
+  --shadow-sm: 0 16px 30px rgba(15, 23, 42, 0.08);
+}
