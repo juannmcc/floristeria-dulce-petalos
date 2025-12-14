@@ -1,9 +1,51 @@
 .breadcrumbs {
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto 2rem;
   font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  color: var(--color-muted);
+}
+
+.item + .item::before {
+  content: '›';
+  display: inline-block;
+  margin: 0 0.4rem;
+  color: var(--color-muted);
+  font-size: 2em;
 }
 
 .breadcrumbs a {
   text-decoration: none;
-  color: inherit;
+  color: var(--color-muted);
+  padding-top: 8px;
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-muted-hover);
+  padding-top: 8px;
+}
+
+.breadcrumbs span {
+  padding-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .breadcrumbs {
+    padding: 0 0.25rem;
+    margin-bottom: 0.75rem;
+  }
 }
