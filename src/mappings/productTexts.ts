@@ -1,4 +1,4 @@
-import { __ } from '../i18n/translate'
+import { __ } from '@/i18n/translate'
 
 export const getWateringText = (times: number): string => {
   const base = __('product.wateringsPerWeek')

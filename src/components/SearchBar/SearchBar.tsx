@@ -1,5 +1,5 @@
 import styles from './SearchBar.module.css'
-import { __ } from '../../i18n/translate'
+import { __ } from '@/i18n/translate'
 
 interface SearchBarProps {
   value: string

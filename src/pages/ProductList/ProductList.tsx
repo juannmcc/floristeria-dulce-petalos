@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { __ } from '../../i18n/translate'
-import { useProducts } from '../../hooks/useProducts'
-import ProductCard from '../../components/ProductCard/ProductCard'
-import SearchBar from '../../components/SearchBar/SearchBar'
+import { __ } from '@/i18n/translate'
+import { useProducts } from '@/hooks/useProducts'
+import ProductCard from '@/components/ProductCard/ProductCard'
+import SearchBar from '@/components/SearchBar/SearchBar'
 import styles from './ProductList.module.css'
 
 const ProductList = () => {

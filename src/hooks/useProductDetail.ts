@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getProductById } from '../api/productService'
-import type { Product } from '../types/product'
+import { getProductById } from '@/api/productService'
+import type { Product } from '@/types/product'
 
 export const useProductDetail = (id: string) => {
   const [product, setProduct] = useState<Product | null>(null)
