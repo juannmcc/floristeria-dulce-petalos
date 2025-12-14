@@ -9,10 +9,10 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link to={`/product/${product.id}`} className={styles.card}>
-      <img src={product.imgUrl} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{product.binomialName}</p>
-      <strong>{product.price} €</strong>
+      <img src={product.imgUrl} alt={product.name} />
+      <strong>€{product.price.toFixed(2)}</strong>
     </Link>
   )
 }
