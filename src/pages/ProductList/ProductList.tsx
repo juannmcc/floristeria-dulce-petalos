@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { __ } from '../../i18n/translate'
-import { useProducts } from '../../hooks/useProducts'
-import ProductCard from '../../components/ProductCard/ProductCard'
-import SearchBar from '../../components/SearchBar/SearchBar'
+import { __ } from '@/i18n/translate'
+import { useProducts } from '@/hooks/useProducts'
+import ProductCard from '@/components/ProductCard/ProductCard'
+import SearchBar from '@/components/SearchBar/SearchBar'
 import styles from './ProductList.module.css'
 
 const ProductList = () => {
@@ -19,20 +19,25 @@ const ProductList = () => {
       binomialName.toLowerCase().includes(searchLower)
     )
   })
-  
-return (
-  <div className={styles.page}>
-    <div className={styles.gridContainer}>
-      <SearchBar value={search} onChange={setSearch} />
-      <div className={styles.grid}>
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+
+  return (
+    <div className={styles.page}>
+      <div className={styles.gridContainer}>
+        <SearchBar value={search} onChange={setSearch} />
+
+        {filteredProducts.length === 0 ? (
+          <p className={styles.notFound}>{__('error.not.found')}</p>
+        ) : (
+          <div className={styles.grid}>
+            {filteredProducts.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+
       </div>
     </div>
-  </div>
-)
-
+  )
 }
 
 export default ProductList

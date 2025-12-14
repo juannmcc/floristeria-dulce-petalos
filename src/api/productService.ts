@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { Product } from '../types/product'
+import type { Product } from '@/types/product'
 
 const API_BASE_URL = 'https://dulces-petalos.jakala.es/api/v1'
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { __ } from '../../i18n/translate'
+import { __ } from '@/i18n/translate'
 import './Header.module.css'
 
 const Header = () => {
