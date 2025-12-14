@@ -9,6 +9,7 @@ const esES: Record<string, string> = {
   'fertilizer.phosphorus': 'fósforo',
   'fertilizer.nitrogen': 'nitrógeno',
   'search.placeholder': 'Busca en nuestra tienda',
+  loading: 'Cargando…',
 }
 
 export const __ = (key: string): string => {
